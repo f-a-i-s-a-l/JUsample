@@ -1,0 +1,432 @@
+/* Variables and html */
+
+/* 
+    ==== Font Families Available through external links ====
+    font-family: 'Cabin', sans-serif;
+    font-family: 'Righteous', cursive;
+    font-family: 'Philosopher', sans-serif;
+    font-family: 'Sansita Swashed', cursive;
+*/
+*{
+    padding: 0px;
+    margin: 0px;
+    
+}
+:root{
+    /* Background color */
+    --tint: #ffffdd;    
+}
+
+body{
+    background-color: var(--tint);
+}
+
+
+
+/*
+    Header Area
+    Contains Logo, Search Bar and NIRF Details
+*/
+#head{
+    height: 6rem;
+    display: grid;
+    grid-template-columns: 2fr 4fr 1.5fr;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Cabin', sans-serif;
+}
+
+#logo{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: center;
+    color: #5d0f0f;
+    font-size: 30px;
+    font-weight: bold;
+}
+#search{
+    font-size: 0.9rem;
+}
+
+#searchbar{
+    width: 60%;
+    font-size: 1rem;
+    padding: 5px;
+    border-radius: 5px;
+}
+#searchbtn{
+    font-size: 1rem;
+    padding: 5px 15px;
+    background-color: var(--tint);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.1s linear;
+}
+#searchbtn:hover{
+    background-color: rgb(255, 208, 0);
+    transform: scale(1.05);
+}
+
+#login{
+    padding: 5px;
+    margin: auto;
+    flex-direction: column;
+    display: flex;
+    width: 90%;
+    /* border: 1px solid black; */
+}
+
+#login .services{
+    background-color: rgb(255, 145, 0);
+    padding: 7px 20px;
+    margin: 5px 0px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: 0.2s linear;
+}
+#login .services:hover{
+    background-color: maroon;
+    transform: scale(1.05);
+    box-shadow: 0 0 5px black;
+}
+#login a:hover{
+    text-decoration: underline;
+}
+#logo::before, #searchbar::before, #login::before{
+    top: 0px;
+    left: 0px;
+    background-color: var(--tint);
+    content: "";
+    position: absolute;
+    z-index: -1;
+    height: 6.2rem;
+    opacity: 0.4;
+    width: 100%;
+}
+
+/* Background Sildeshow Part */
+.slideshow, .slideshow:after{
+    position: fixed;
+    width: 100%;
+    height: 57rem;
+    top: 0px; left: 0px;
+    z-index: -200;
+}
+.slideshow:after{
+    content: '';
+    background: transparent left;
+}
+.slideshow li span{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: transparent;
+    background-size: cover;
+    background-position: center;
+    background-repeat: none;
+    opacity: 0;
+    z-index: -200;
+    animation: imageAnimation 30s linear infinite 0s;
+}
+.slideshow li:nth-child(1) span{
+    background-image: url("../images/Building/Entrance_Gate_Main_Campus_2.jpg");
+}
+.slideshow li:nth-child(2) span{
+    background-image: url("../images/Building/DeptOfCE.jpg");
+    animation-delay: 6s;
+}
+.slideshow li:nth-child(3) span{
+    background-image: url("../images/Building/JU-1.jpg");
+    animation-delay: 12s;
+}
+.slideshow li:nth-child(4) span{
+    background-image: url("../images/Building/JU-SL-2.jpg");
+    animation-delay: 18s;
+}
+.slideshow li:nth-child(5) span{
+    background-image: url("../images/Building/ju-sl.jpg");
+    animation-delay: 24s;
+}
+
+
+
+
+
+/* 
+    First navbar area 
+    Contains Home | About Us | Administration | Students | Exams | Contacts
+    Except Home, everything else is a drop-down list
+*/
+#navbar{
+    height: 2rem;
+}
+
+#navbar ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#navbar ul li{
+    list-style-type: none;
+    color: white;
+    transition: all 0.2s linear 0s;
+}
+.drop-down a{
+    text-decoration: none;
+    font-family: 'Cabin', sans-serif;
+    border: 2px solid white;
+    position: relative;
+    margin: 2px 7px;
+    font-size: 0.8rem;
+    color: white;
+    display: inline-block;
+    background-color: rgba(94, 14, 14, 0.844);
+    border-radius: 10px;
+    box-shadow: 0 0 5px black;
+    padding: 8px 20px;
+    width: 8.5vw;
+}
+.drop-content a{
+    background-color: rgb(255, 166, 0);
+    font-size: 0.6rem;
+    padding: 3px 5px;
+    border: 1px solid white;
+    margin: 1px 0px;
+    width: 88%;
+    left: 6px;
+}
+#navbar ul li:hover{
+    transform: scale(1.1);
+}
+/* Drop-down content */
+.drop-down{
+    position: relative;
+}
+.drop-content{
+    display: none;
+    position: absolute;
+}
+.drop-content a{
+    animation: dropanimation 0.4s ease-in-out 0s 1 forwards;
+}
+/* dropanimation is at the bottom of the page */
+.drop-down:hover .drop-content{
+    display: block;
+}
+.drop-content a:hover{
+    background-color: rgb(101, 11, 11);
+    transform: scale(1.2);
+}
+
+
+/*  Main-Box */
+#main-box{
+    height: max-content;
+    background-color: var(--tint);
+    margin: 2rem;
+}
+#main-box ol, #main-box ul{
+    margin: 10px 20px;
+    font-family: 'Philosopher', sans-serif;
+}
+#main-box ol li a, #main-box ul li a{
+    text-decoration: none;
+    color: maroon;
+}
+#main-box ol li a:hover, #main-box ul li a:hover{
+    text-decoration: underline;
+}
+.contents h2{
+    font-size: 2.5rem;
+    color: maroon;
+    text-decoration: underline;
+    font-family: 'Sansita Swashed', cursive;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.contents h4{
+    background-color: orange;
+    color: maroon;
+    font-size: 1.3rem;
+    padding: 10px 20px;
+    margin: 20px 0px;
+    font-family: 'Philosopher', sans-serif;
+}
+.contents h3{
+    font-weight: bold;
+    font-size: 2rem;
+    color: maroon;
+    font-family: 'Sansita Swashed', cursive;
+}
+.contents p{
+    font-family: 'Philosopher', sans-serif;
+}
+.textAndImg{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.image{
+    display: flex;
+    height: max-content;
+    padding: 30px 5px;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+.image img{
+    height: 88%;
+    width: 72%;
+}
+.image h4{
+    font-size: 1rem;
+    color: maroon;
+    background-color: transparent;
+    text-align: center;
+    font-family: 'Sansita Swashed', cursive;
+}
+.datatable{
+    border: 2px solid maroon;
+    background-color: orange;
+}
+.datatable th, .datatable td{
+    border: 2px solid maroon;
+    background-color: var(--tint);
+    margin: 0px;
+    padding: 10px 20px;
+    text-align: center;
+}
+/* 
+    Contains Contact Information
+*/
+#comms{
+    height: 20rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+}
+#comms::before{
+    content: "";
+    position: absolute;
+    background-color: #d36a6a;
+    z-index: 0;
+    height: 20rem;
+    width: 100%;
+}
+.bottom{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    padding: 2rem;
+    z-index: 10;
+}
+.bottom h5{
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 1.2rem;
+}
+.bottom img{
+    padding: 10px 10px;
+    height: 12rem;
+    width: 12rem;
+}
+.bottom a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+.bottom a:hover{
+    text-decoration: underline;
+}
+
+/* 
+    Fourth Section
+    Contains Contact Information
+*/
+#comms{
+    height: 20rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+}
+#comms::before{
+    content: "";
+    position: absolute;
+    background-color: #d36a6a;
+    z-index: 0;
+    height: 20rem;
+    width: 100%;
+}
+.bottom{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    padding: 2rem;
+    z-index: 10;
+}
+.bottom h5{
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 1.2rem;
+}
+.bottom img{
+    padding: 10px 10px;
+    height: 12rem;
+    width: 12rem;
+}
+.bottom a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+.bottom a:hover{
+    text-decoration: underline;
+}
+
+
+/* 
+    Footer
+*/
+footer{
+    height: 3rem;
+    display: flex;
+    background-color: rgb(46, 46, 46);
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+
+/* 
+    Additional utilities
+*/
+
+@keyframes imageAnimation{
+    0%{ opacity: 0; animation-timing-function: ease-in;}
+    7%{ opacity: 0.3; animation-timing-function: ease-out;}
+    20%{ opacity: 0.3;}
+    28% {opacity: 0;}
+    100% {opacity: 0;}
+}
+
+@keyframes dropanimation{
+    0%{
+        transform: scaleY(0);
+    }
+    80%{
+        transform: scaleY(1.1);
+    }
+    100%{
+        transform: scaleY(1);
+    }
+}

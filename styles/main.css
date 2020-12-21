@@ -1,0 +1,597 @@
+/* Variables and html */
+
+/* 
+    ==== Font Families Available through external links ====
+    font-family: 'Cabin', sans-serif;
+    font-family: 'Righteous', cursive;
+    font-family: 'Philosopher', sans-serif;
+    font-family: 'Sansita Swashed', cursive;
+*/
+*{
+    padding: 0px;
+    margin: 0px;
+    
+}
+:root{
+    /* Background color */
+    --tint: #ffffdd;    
+}
+
+body{
+    background-color: rgba(0, 187, 255, 0.163);
+}
+
+
+
+/*
+    Header Area
+    Contains Logo, Search Bar and NIRF Details
+*/
+#head{
+    height: 6rem;
+    display: grid;
+    grid-template-columns: 2fr 4fr 1.5fr;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Cabin', sans-serif;
+}
+
+/* #head::before{
+    content: "";
+    position: absolute;
+    background: url("../images/Building/Entrance_Gate_Main_Campus_2.jpg") no-repeat center center/cover;
+    z-index: -1;
+    height: 57rem;
+    width: 100%;
+    opacity: 0.7;
+} */
+#logo{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: center;
+    color: #5d0f0f;
+    font-size: 30px;
+    font-weight: bold;
+}
+#search{
+    font-size: 0.9rem;
+}
+
+#searchbar{
+    width: 60%;
+    font-size: 1rem;
+    padding: 5px;
+    border-radius: 5px;
+}
+#searchbtn{
+    font-size: 1rem;
+    padding: 5px 15px;
+    background-color: var(--tint);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#login{
+    padding: 5px;
+    margin: auto;
+    flex-direction: column;
+    display: flex;
+    width: 90%;
+    /* border: 1px solid black; */
+}
+
+#login .services{
+    background-color: rgb(255, 145, 0);
+    padding: 7px 20px;
+    margin: 5px 0px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: 0.2s linear;
+}
+#login .services:hover{
+    background-color: maroon;
+    transform: scale(1.05);
+    box-shadow: 0 0 5px black;
+}
+#login a:hover{
+    text-decoration: underline;
+}
+#logo::before, #searchbar::before, #login::before{
+    top: 0px;
+    left: 0px;
+    background-color: var(--tint);
+    content: "";
+    position: absolute;
+    z-index: -1;
+    height: 5.8rem;
+    width: 100%;
+}
+
+/* Background Sildeshow Part */
+.slideshow, .slideshow:after{
+    position: fixed;
+    width: 100%;
+    height: 57rem;
+    top: 0px; left: 0px;
+    z-index: -200;
+}
+.slideshow:after{
+    content: '';
+    background: transparent left;
+}
+.slideshow li span{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: transparent;
+    background-size: cover;
+    background-position: center;
+    background-repeat: none;
+    opacity: 0;
+    z-index: -200;
+    animation: imageAnimation 30s linear infinite 0s;
+}
+.slideshow li:nth-child(1) span{
+    background-image: url("../images/Building/Entrance_Gate_Main_Campus_2.jpg");
+}
+.slideshow li:nth-child(2) span{
+    background-image: url("../images/Building/DeptOfCE.jpg");
+    animation-delay: 6s;
+}
+.slideshow li:nth-child(3) span{
+    background-image: url("../images/Building/JU-1.jpg");
+    animation-delay: 12s;
+}
+.slideshow li:nth-child(4) span{
+    background-image: url("../images/Building/JU-SL-2.jpg");
+    animation-delay: 18s;
+}
+.slideshow li:nth-child(5) span{
+    background-image: url("../images/Building/ju-sl.jpg");
+    animation-delay: 24s;
+}
+
+
+
+
+
+/* 
+    First navbar area 
+    Contains Home | About Us | Administration | Students | Exams | Contacts
+    Except Home, everything else is a drop-down list
+*/
+#navbar{
+    height: 2rem;
+}
+
+#navbar ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#navbar ul li{
+    list-style-type: none;
+    color: white;
+    transition: all 0.2s linear 0s;
+}
+.drop-down a{
+    text-decoration: none;
+    font-family: 'Cabin', sans-serif;
+    border: 2px solid white;
+    position: relative;
+    margin: 2px 7px;
+    font-size: 0.8rem;
+    color: white;
+    display: inline-block;
+    background-color: rgba(94, 14, 14, 0.844);
+    border-radius: 10px;
+    box-shadow: 0 0 5px black;
+    padding: 8px 20px;
+    width: 8.5vw;
+}
+.drop-content a{
+    background-color: rgb(255, 166, 0);
+    font-size: 0.6rem;
+    padding: 3px 5px;
+    border: 1px solid white;
+    margin: 1px 0px;
+    width: 88%;
+    left: 6px;
+}
+#navbar ul li:hover{
+    transform: scale(1.1);
+}
+/* Drop-down content */
+.drop-down{
+    position: relative;
+}
+.drop-content{
+    display: none;
+    position: absolute;
+}
+.drop-content a{
+    animation: dropanimation 0.4s ease-in-out 0s 1 forwards;
+}
+.drop-down:hover .drop-content{
+    display: block;
+}
+.drop-content a:hover{
+    background-color: rgb(101, 11, 11);
+    transform: scale(1.2);
+}
+
+
+
+
+/* 
+    First Section
+    Contains Admission | Departments | Research | Academics | Campus Map
+    Dach heading links to the invisible box on the left-side area
+*/
+#first{
+    height: 28rem;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+#vert-nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+}
+#vert-nav a{
+    text-decoration: none;
+    color: black;
+    transition: all 0.3s linear;
+}
+#vert-nav a:hover{
+    color: white;
+    /* transform: scale(1.05); */
+}
+#displayBox{
+    margin: 20px 30px;
+    border-radius: 15px;
+    /* border: 2px solid white; */
+}
+/* #displayBox ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#displayBox ul li{
+    list-style-type: none;
+}
+#displayBox ul li a{
+    display: block;
+    text-decoration: none;
+    color: white;
+} */
+
+.links{
+    background-color: #ffffff8a;
+    font-family: 'Righteous', cursive;
+    font-size: 1.5em;
+    text-align: left;
+    width: 20vw;
+    padding: 15px 24px;
+    margin: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px black;
+}
+.v_red{
+    border-top: 10px solid rgb(247, 31, 78);
+    transition: background-color 0.3s linear;
+}
+.v_red:hover{
+    background-color:  rgb(247, 31, 78);
+}
+.v_yellow{
+    border-top: 10px solid rgb(255, 196, 0);
+    transition: background-color 0.3s linear;
+}
+.v_yellow:hover{
+    background-color:  rgb(255, 196, 0);
+}
+.v_lime{
+    border-top: 10px solid rgb(0, 184, 0);
+    transition: background-color 0.3s linear;
+}
+.v_lime:hover{
+    background-color:  rgb(0, 184, 0);
+}
+.v_sky{
+    border-top: 10px solid rgb(8, 140, 193);
+    transition: background-color 0.3s linear;
+}
+.v_sky:hover{
+    background-color:  rgb(8, 140, 193);
+}
+.v_magenta{
+    border-top: 10px solid rgb(196, 1, 196);
+    transition: background-color 0.3s linear;
+}
+.v_magenta:hover{
+    background-color: rgb(196, 1, 196);
+}
+#displayBox iframe{
+    height: 100%; 
+    width: 100%; 
+    border-radius: 10px;
+}
+
+
+
+/* 
+    Second Navbar area
+    Contains VC's Desk | Achievements | Collaborations and so on
+    Most of these will be simple links, rather than drop-down boxes
+*/
+#second-nav{
+    height: 6rem;
+    background-color: rgb(255, 145, 0);
+}
+
+#second-nav ul{
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    align-items: center;
+    justify-content: center;
+}
+#second-nav ul li{
+    list-style-type: none;
+}
+#second-nav ul li a{
+    border: 1px solid white;
+    margin: 3px;
+    display: block;
+    padding: 10px 15px;
+    font-size: 1.3rem;
+    font-family: 'Cabin', sans-serif;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    transition: all 0.2s linear 0s;
+}
+#second-nav ul li a:hover{
+    text-decoration: underline;
+    transform: scale(1.06);
+    background-color: maroon;
+}
+
+
+/* 
+    Second Section
+    Contains the recent notifications
+*/
+#notifs{
+    background-color: var(--tint);
+    height: 15rem;
+    padding: 30px 30px;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+}
+#notifs .notebox{
+    background-color: var(--tint);
+    border: 1px solid maroon;
+    padding: 10px 20px;
+    margin: 0px 2px;
+    text-align: center;
+    overflow: auto;
+}
+/* Styling the Scrollbar */
+/* width */
+.notebox::-webkit-scrollbar{
+    width: 8px;
+}
+/* track */
+.notebox::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 5px silver;
+    border-radius: 20px;
+}
+/* handle */
+.notebox::-webkit-scrollbar-thumb{
+    background-color: #a92d2d;
+    border-radius: 20px;
+}
+/* handle on hover */
+.notebox::-webkit-scrollbar-thumb:hover{
+    background-color: maroon;
+}
+
+.headline{
+    border-bottom: 2px solid maroon;
+    color: maroon;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.notices ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.notices ul li{
+    list-style-type: none;
+    padding: 10px 0px;
+    justify-content: center;
+}
+.notices ul li a{
+    text-decoration: none;
+    color: maroon;
+}
+.notices ul li a:hover{
+    text-decoration: underline;
+}
+
+
+
+/* 
+    Third Section
+*/
+#extras{
+    height: 31rem;
+    display: grid;
+    grid-template-columns: 6fr 2fr;
+    background-color: var(--tint);
+}
+#container{
+    border: 1px solid transparent;
+    margin: 10px;
+    padding: 20px;
+    display: grid;
+    color: maroon;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+}
+#container h4{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 5px 0px;
+}
+#container ul li{
+    list-style-type: none;
+}
+#container ul li a{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif ;
+    font-size: 15px;
+    color: black;
+}
+#container ul li a:hover{
+    text-decoration: underline;
+}
+
+
+#side-nav{
+    border: 5px solid maroon;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 5px;
+}
+#side-nav ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+#side-nav ul li{
+    list-style-type: none;
+}
+#side-nav ul li a{
+    display: block;
+    text-decoration: none;
+    font-family: 'Righteous', cursive;
+    color: white;
+    background-color: maroon;
+    padding: 20px 30px;
+    box-shadow: 0 0 5px black;
+    font-size: 26px;
+    margin: 5px 0px;
+}
+#side-nav ul li a:hover{
+    background-color: orange;
+}
+/* 
+    Fourth Section
+    Contains Contact Information
+*/
+#comms{
+    height: 20rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+}
+#comms::before{
+    content: "";
+    position: absolute;
+    background-color: #d36a6a;
+    z-index: 0;
+    height: 20rem;
+    width: 100%;
+}
+.bottom{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    padding: 2rem;
+    z-index: 10;
+}
+.bottom h5{
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 1.2rem;
+}
+.bottom img{
+    padding: 10px 10px;
+    height: 12rem;
+    width: 12rem;
+}
+.bottom a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+.bottom a:hover{
+    text-decoration: underline;
+}
+
+
+/* 
+    Footer
+*/
+footer{
+    height: 3rem;
+    display: flex;
+    background-color: rgb(46, 46, 46);
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+/* 
+    Additional utilities
+*/
+
+@keyframes imageAnimation{
+    0%{ opacity: 0; animation-timing-function: ease-in;}
+    7%{ opacity: 0.3; animation-timing-function: ease-out;}
+    20%{ opacity: 0.3;}
+    28% {opacity: 0;}
+    100% {opacity: 0;}
+}
+
+@keyframes dropanimation{
+    0%{
+        transform: scaleY(0);
+    }
+    80%{
+        transform: scaleY(1.1);
+    }
+    100%{
+        transform: scaleY(1);
+    }
+}
+
+@keyframes dropanimation2{
+    0%{
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    80%{
+        transform: translateX(-5px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}

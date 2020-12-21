@@ -1,0 +1,113 @@
+
+/* 
+    ==== Font Families Available through external links ====
+    font-family: 'Cabin', sans-serif;
+    font-family: 'Righteous', cursive;
+    font-family: 'Philosopher', sans-serif;
+*/
+
+:root{
+    /* Background color */
+    --tint: #ffffdd;   
+    --tint-lite: #ffffdd66; 
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Common Body-background for all support links */
+body{
+    background-color: rgba(255, 255, 255, 0.272);
+}
+
+
+/* Admissions Page */
+.admissions ul, .research ul, .academics ul{
+    display: flex;
+    flex-direction: column;
+}
+
+.admissions ul li, .research ul li, .academics ul li{
+    list-style-type: none;
+}
+.admissions ul li a{
+    display: block;
+    padding: 14.9px 20px;
+    font-family: 'Philosopher', sans-serif;
+    font-size: 6vh;
+    text-decoration: none;
+    border-left: 5px solid rgb(247, 31, 78);
+    color: black;
+    transition: all 0.2s linear;
+}
+.admissions ul li a:hover{
+    background-color: rgb(247, 31, 78);
+    color: white;
+    transform: translateX(15px);
+}
+
+/* Departments Page has a different stylesheet of its own */
+
+
+/* Research Page */
+
+.research ul li a{
+    text-decoration: none;
+    border-left: 5px solid rgb(13, 186, 13);
+    font-family: 'Philosopher', sans-serif;
+    font-size: 7vh;
+    padding: 22.9px;
+    color: black;
+    display: block;
+    transition: all 0.2s linear;
+}
+.research ul li a:hover{
+    background-color: rgb(13, 186, 13);
+    color: white;
+    transform: translateX(15px);
+}
+
+/* Academics Page */
+
+.academics ul li a{
+    display: block;
+    text-decoration: none;
+    font-size: 4.4vh;
+    border-left: 5px solid rgb(0, 149, 255);
+    padding: 16px;
+    font-weight: bold;
+    font-family: 'Philosopher', sans-serif;
+    color: black;
+    transition: all 0.2s linear;
+}
+.academics ul li a:hover{
+    color: white;
+    background-color: rgb(0, 149, 255);
+    transform: translateX(15px);
+}
+
+/* Campus-Map Page */
+.campusMap{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    border-left: 5px solid rgb(209, 12, 209);
+}
+.map{
+    padding: 20px;
+}
+.map img{
+    height: 90vh;
+}
+.labels ol{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 1.1rem;
+    margin:0px 5px;
+    
+}
+.labels ol li{
+    margin: 0px 15px;
+    font-family: 'Philosopher', sans-serif;
+    padding: 5px;
+}

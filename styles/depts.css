@@ -1,0 +1,151 @@
+/* 
+    ==== Font Families Available through external links ====
+    font-family: 'Cabin', sans-serif;
+    font-family: 'Righteous', cursive;
+    font-family: 'Philosopher', sans-serif;
+*/
+.depts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.depts a{
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    height: 30vh;
+    width: 90vw;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    font-size: 2rem;
+    font-family: 'Philosopher', sans-serif;
+    transition: all 0.2s linear;
+}
+.depts a:hover{
+    transform: scale(1.05);
+}
+#arts{
+    border-right: 5px solid gold;
+    border-left: 5px solid gold;
+}
+#arts:hover{
+    background-color: gold;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px black;
+}
+
+#engg{
+    border-right: 5px solid rgb(0, 170, 255);
+    border-left: 5px solid rgb(0, 170, 255);
+}
+#engg:hover{
+    background-color: rgb(0, 170, 255);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px black;
+}
+
+#sci{
+    border-right: 5px solid lime;
+    border-left: 5px solid lime;
+}
+#sci:hover{
+    background-color: lime;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px black;
+}
+
+/* 
+        ==== Department of Arts ====
+*/
+
+.doa ul, .doet ul, .dos ul{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+}
+.doa ul li, .doet ul li, .dos ul li{
+    list-style-type: none;
+}
+.doa ul li a{
+    display: flex;
+    text-decoration: none;
+    color: brown;
+    font-weight: bold;
+    font-family: 'Philosopher', sans-serif;
+    background-color: rgba(255, 217, 0, 0.721);
+    box-shadow: inset -3px -3px 5px rgb(169, 90, 17);
+    height: 20vh;
+    margin: 10px 5px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    transition: all 0.1s linear;
+}
+.doa ul li a:hover{
+    background-color: orange;
+}
+
+
+
+/* 
+        ==== Department of Engineering ====
+*/
+
+.doet ul li a{
+    display: flex;
+    text-decoration: none;
+    color:  rgb(17, 63, 169);
+    font-weight: bold;
+    font-family: 'Philosopher', sans-serif;
+    background-color: rgba(0, 208, 255, 0.721);
+    box-shadow: inset -3px -3px 5px rgb(17, 63, 169);
+    height: 20vh;
+    margin: 10px 5px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    transition: all 0.1s linear;
+}
+.doet ul li a:hover{
+    background-color: cyan;
+}
+
+
+
+
+/* 
+        ==== Department of Science ====
+*/
+
+.dos ul li a{
+    display: flex;
+    text-decoration: none;
+    color:   rgb(2, 54, 13);
+    font-weight: bold;
+    font-family: 'Philosopher', sans-serif;
+    background-color: rgba(13, 196, 19, 0.721);
+    box-shadow: inset -3px -3px 5px rgb(2, 54, 13);
+    height: 20vh;
+    margin: 10px 5px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    transition: all 0.1s linear;
+}
+.dos ul li a:hover{
+    background-color: lime;
+}
